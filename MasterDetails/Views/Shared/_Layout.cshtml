@@ -3,6 +3,7 @@
 <head>
     <title>@Page.Title</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.7.1.js"></script>
 
     <style>
@@ -10,11 +11,13 @@
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: .90em;
         }
-        .footer p{
+
+        .footer p {
             padding: 10px 0;
         }
     </style>
@@ -31,7 +34,13 @@
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
                     <li class="nav-item">
-                        @Html.ActionLink("Home", "Index", new { }, new {@class="nav-link"})
+                        @Html.ActionLink("Home", "Index", new { }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Spot", "Index", "Spots", new { }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Client", "Index", "Clients", new { }, new { @class = "nav-link" })
                     </li>
                 </div>
             </div>

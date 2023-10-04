@@ -136,13 +136,26 @@
     <Content Include="Web.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Spots\Create.cshtml" />
+    <Content Include="Views\Spots\Delete.cshtml" />
+    <Content Include="Views\Spots\Details.cshtml" />
+    <Content Include="Views\Spots\Edit.cshtml" />
+    <Content Include="Views\Spots\Index.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SpotsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310031845542_ScriptA.cs" />
+    <Compile Include="Migrations\202310031845542_ScriptA.designer.cs">
+      <DependentUpon>202310031845542_ScriptA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,6 +195,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202310031845542_ScriptA.resx">
+      <DependentUpon>202310031845542_ScriptA.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
