@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MasterDetails.Models.Client>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,5 +8,18 @@
 
 <div class="d-flex justify-content-end">
     <a href="@Url.Action("Create","Clients")" id="btnCreate" class="btn btn-primary btn-sm mb-2"><i class="fa fa-plus"></i> Add New Client</a>
+</div>
+
+<div>
+    @foreach (var client in Model)
+    {
+        <div class="card md-2">
+            <div class="card-header d-flex justify-content-between">
+                <div>
+                    <img src="@client.Picture" width="40" style="border-radius: 8px;"/>
+                </div>
+            </div>
+        </div>
+    }
 </div>
 
