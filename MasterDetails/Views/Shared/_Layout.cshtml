@@ -25,7 +25,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,14 +51,34 @@
         @RenderBody()
     </div>
 
-    <div class="text-light bg-secondary footer">
+    <div class="text-light bg-dark footer">
         <footer class="container">
             <p class="text-center">&copy; @DateTime.Now.Year www.isdb-bisew.org</p>
         </footer>
     </div>
 
     <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     @RenderSection("scripts", required: false)
     @RenderSection("styles", required: false)
+
+
+    <script type="text/javascript">
+        $("#btnPlus").click(function (e) {
+            e.preventDefault();
+            var spotContainer = $("#spotContainer");
+            $.ajax({
+                url: "/Clients/AddNewSpot",
+                type: "GET",
+                success: function (data) {
+                    spotContainer.append(data);
+                }
+            });
+        });
+        $(document).on("click", "#btnDeleteSpot", function (e) {
+            e.preventDefault();
+            $(this).parent().parent().remove();
+        })
+    </script>
 </body>
 </html>
